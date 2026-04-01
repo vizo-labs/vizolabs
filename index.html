@@ -67,13 +67,13 @@
       flex-direction: column;
       justify-content: space-between;
       min-height: 100vh;
-      padding: 4rem 6rem;
+      padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 6vw, 6rem);
       position: relative;
       z-index: 1;
     }
 
     .top {
-      max-width: 620px;
+      max-width: min(620px, 100%);
     }
 
     .lab-name {
@@ -86,7 +86,7 @@
     }
 
     .mission-heading {
-      font-size: 1.75rem;
+      font-size: clamp(1.3rem, 3.5vw, 1.75rem);
       font-weight: 400;
       color: var(--text);
       margin-bottom: 1.5rem;
@@ -95,7 +95,7 @@
     }
 
     .mission-body {
-      font-size: 1.05rem;
+      font-size: clamp(0.95rem, 2vw, 1.05rem);
       font-weight: 400;
       color: var(--text-secondary);
       line-height: 1.7;
@@ -124,20 +124,13 @@
     }
 
     @media (max-width: 640px) {
-      .page {
-        padding: 3rem 2rem;
-      }
-
       .lab-name {
         margin-bottom: 3rem;
       }
 
-      .mission-heading {
-        font-size: 1.4rem;
-      }
-
       .bottom {
         gap: 2.5rem;
+        flex-direction: column;
       }
     }
   </style>
